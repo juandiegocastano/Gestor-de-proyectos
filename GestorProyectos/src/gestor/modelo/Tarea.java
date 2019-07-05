@@ -5,10 +5,34 @@
  */
 package gestor.modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author Usuario
  */
 public class Tarea {
+
+    public Date getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(Date tiempo) {
+        this.tiempo = tiempo;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+    
+    private Date tiempo;
+    private Estado estado;
+    
+    
+  
     
 }

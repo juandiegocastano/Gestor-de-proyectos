@@ -6,6 +6,7 @@
 package gestor.controlador;
 
 import gestor.modelo.Proyecto;
+import java.util.List;
 
 /**
  *
@@ -23,5 +24,14 @@ public static ControladorProyecto getInstance() {
     }
     return instance;
     }
+
+    private List<Proyecto> listaProyectos;
     
+    //TODO: Terminar metodos de controlador
+    public void cambiarEstadoTarea(){};
+    public void iniciarTarea(){};
+    public void pararTarea(){};
+    public void getProyecto(){};
+    public void addProyecto(){};
+
 }
