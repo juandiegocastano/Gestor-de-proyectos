@@ -1,0 +1,4 @@
+En el campo Tarea isTerminada dice 
+En la clase Registro es donde pienso guardar los "Logs". 
+En Registro el campo isTareaActual tiene TRUE si es una tarea que se cerro inesperadamente, para cuando un integrante ingrese se verifique a través de una consulta si tiene alguno en TRUE y carge dicha tarea.
+En el campo Estado IdRazonSuspension puede ser NULL. Si es NULL significa que no fue suspendido.
