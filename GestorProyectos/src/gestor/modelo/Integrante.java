@@ -11,4 +11,34 @@ package gestor.modelo;
  */
 public class Integrante {
     
+    private Tarea tareasAsignadas;
+    private String nombreIntegrante;
+    private Suspension suspensiones;
+    
+    public Integrante(){};
+    public Tarea getTareasAsignadas() {
+        return tareasAsignadas;
+    }
+
+    public void setTareasAsignadas(Tarea tareasAsignadas) {
+        this.tareasAsignadas = tareasAsignadas;
+    }
+
+    public String getNombreIntegrante() {
+        return nombreIntegrante;
+    }
+
+    public void setNombreIntegrante(String nombreIntegrante) {
+        this.nombreIntegrante = nombreIntegrante;
+    }
+
+    public Suspension getSuspensiones() {
+        return suspensiones;
+    }
+
+    public void setSuspensiones(Suspension suspensiones) {
+        this.suspensiones = suspensiones;
+    }
+
+    
 }

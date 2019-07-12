@@ -11,11 +11,11 @@ package gestor.modelo;
  */
 public class prueba {
     public static void main(String[] args) {
-        EstadoCerrado e = new EstadoCerrado("Se cerro el estado 1");
-        EstadoCerrado a = new EstadoCerrado("Se cerro el estado 2");
+
+        Integrante i = new Integrante();
+        i.setSuspensiones(Suspension.BAÑO);
         
-        System.out.println("Estado 1: " + e.getDescripcion());
-        System.out.println("Estado 2: " + a.getDescripcion());
+        System.out.println("Integrante 1: " + i.getSuspensiones());
         
     }
     
