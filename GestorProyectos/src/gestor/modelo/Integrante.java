@@ -5,25 +5,57 @@
  */
 package gestor.modelo;
 
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 /**
  *
  * @author Usuario
  */
-public class Integrante {
+@Entity
+@Table(name = "Integrantes")
+public class Integrante implements Serializable {
     
-    private Tarea tareasAsignadas;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+    @Column(name = "nombreIntegrante", nullable = true)
     private String nombreIntegrante;
-    private Suspension suspensiones;
+    
+    @OneToMany
+    private List<Suspension> suspensiones;
+    
+    @OneToMany
+    private List<EstadoRegistro> estadoRegistro;
+ 
+    /*    CONSTRUCTORES--------------------------------------------->*/
     
     public Integrante(){};
-    public Tarea getTareasAsignadas() {
-        return tareasAsignadas;
+    
+    public Integrante(String nombreIntegrante, List<Suspension> suspensiones, List<EstadoRegistro> estadoRegistro) {
+        this.nombreIntegrante = nombreIntegrante;
+        this.suspensiones = suspensiones;
+        this.estadoRegistro = estadoRegistro;
     }
 
-    public void setTareasAsignadas(Tarea tareasAsignadas) {
-        this.tareasAsignadas = tareasAsignadas;
+
+    
+    public List<EstadoRegistro> getEstadoRegistro() {
+        return estadoRegistro;
     }
 
+    public void setEstadoRegistro(List<EstadoRegistro> estadoRegistro) {
+        this.estadoRegistro = estadoRegistro;
+    }
+    
     public String getNombreIntegrante() {
         return nombreIntegrante;
     }
@@ -32,12 +64,20 @@ public class Integrante {
         this.nombreIntegrante = nombreIntegrante;
     }
 
-    public Suspension getSuspensiones() {
+    public List<Suspension> getSuspensiones() {
         return suspensiones;
     }
 
-    public void setSuspensiones(Suspension suspensiones) {
+    public void setSuspensiones(List<Suspension> suspensiones) {
         this.suspensiones = suspensiones;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     

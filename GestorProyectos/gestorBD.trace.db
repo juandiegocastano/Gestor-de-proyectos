@@ -1,0 +1,44 @@
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ESTADOREGISTRO" no encontrada
+Table "ESTADOREGISTRO" not found; SQL statement:
+SELECT ID FROM EstadoRegistro WHERE ID <> ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "INTEGRANTES" no encontrada
+Table "INTEGRANTES" not found; SQL statement:
+SELECT ID FROM Integrantes WHERE ID <> ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PROYECTO" no encontrada
+Table "PROYECTO" not found; SQL statement:
+SELECT ID FROM Proyecto WHERE ID <> ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "SUSPENSION" no encontrada
+Table "SUSPENSION" not found; SQL statement:
+SELECT ID FROM Suspension WHERE ID <> ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "TAREA" no encontrada
+Table "TAREA" not found; SQL statement:
+SELECT ID FROM Tarea WHERE ID <> ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "INTEGRANTES_ESTADOREGISTRO" no encontrada
+Table "INTEGRANTES_ESTADOREGISTRO" not found; SQL statement:
+SELECT estadoRegistro_ID FROM Integrantes_EstadoRegistro WHERE estadoRegistro_ID <> estadoRegistro_ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "INTEGRANTES_SUSPENSION" no encontrada
+Table "INTEGRANTES_SUSPENSION" not found; SQL statement:
+SELECT suspensiones_ID FROM Integrantes_Suspension WHERE suspensiones_ID <> suspensiones_ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PROYECTO_INTEGRANTES" no encontrada
+Table "PROYECTO_INTEGRANTES" not found; SQL statement:
+SELECT listaIntegrantes_ID FROM Proyecto_Integrantes WHERE listaIntegrantes_ID <> listaIntegrantes_ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PROYECTO_TAREA" no encontrada
+Table "PROYECTO_TAREA" not found; SQL statement:
+SELECT listaTareas_ID FROM Proyecto_Tarea WHERE listaTareas_ID <> listaTareas_ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "TAREA_ESTADOREGISTRO" no encontrada
+Table "TAREA_ESTADOREGISTRO" not found; SQL statement:
+SELECT estados_ID FROM Tarea_EstadoRegistro WHERE estados_ID <> estados_ID [42102-199]
+2019-07-17 06:27:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "SEQUENCE" no encontrada
+Table "SEQUENCE" not found; SQL statement:
+SELECT SEQ_NAME FROM SEQUENCE WHERE SEQ_NAME <> SEQ_NAME [42102-199]
