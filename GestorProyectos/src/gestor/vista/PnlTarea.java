@@ -5,6 +5,8 @@
  */
 package gestor.vista;
 
+import gestor.patrones.PrincipalVisitador;
+
 /**
  *
  * @author Usuario
@@ -167,6 +169,11 @@ public class PnlTarea extends javax.swing.JPanel {
         jLabel4.setText("Tarea 1 (Nombre tarea)");
 
         jButton6.setText("Volver");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -225,6 +232,10 @@ public class PnlTarea extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       visitador.cambiarTarjeta("tarjetaHome");  
+    }//GEN-LAST:event_jButton6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -240,11 +251,14 @@ public class PnlTarea extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    private PrincipalVisitador visitador;
+    void setVisitador(PrincipalVisitador visitador) {
+        this.visitador = visitador;
+    }
 }

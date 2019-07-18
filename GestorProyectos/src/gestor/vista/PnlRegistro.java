@@ -5,6 +5,8 @@
  */
 package gestor.vista;
 
+import gestor.patrones.PrincipalVisitador;
+
 /**
  *
  * @author Usuario
@@ -109,4 +111,8 @@ public class PnlRegistro extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+    private PrincipalVisitador visitador;
+    void setVisitador(PrincipalVisitador visitador) {
+        this.visitador = visitador;
+    }
 }

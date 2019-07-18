@@ -5,17 +5,29 @@
  */
 package gestor.vista;
 
+import gestor.patrones.PrincipalVisitador;
+import java.awt.CardLayout;
+
 /**
  *
  * @author Usuario
  */
-public class FrmGestor extends javax.swing.JFrame {
+public class FrmGestor extends javax.swing.JFrame implements PrincipalVisitador {
 
     /**
      * Creates new form FrmGestor
      */
     public FrmGestor() {
         initComponents();
+        
+       pnlInicioSesion.setVisitador(this);
+       pnlHome.setVisitador(this);
+       pnlProyecto.setVisitador(this);
+       pnlTarea.setVisitador(this);
+       pnlTareaSuspendida.setVisitador(this);
+       pnlRazonSuspension.setVisitador(this);
+       pnlCrearProyecto.setVisitador(this);
+        
     }
 
     /**
@@ -28,9 +40,16 @@ public class FrmGestor extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        PnlTarjetas = new javax.swing.JPanel();
+        pnlInicioSesion = new gestor.vista.PnlInicioSesion();
+        pnlHome = new gestor.vista.PnlHome();
+        pnlProyecto = new gestor.vista.PnlProyecto();
+        pnlTarea = new gestor.vista.PnlTarea();
+        pnlTareaSuspendida = new gestor.vista.PnlTareaSuspendida();
+        pnlRazonSuspension = new gestor.vista.PnlRazonSuspension();
+        pnlCrearProyecto = new gestor.vista.PnlCrearProyecto();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -45,33 +64,23 @@ public class FrmGestor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanel3.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 238, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 139, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Gestor de proyectos");
+        jPanel3.add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
-        jPanel2.add(jPanel4, java.awt.BorderLayout.PAGE_END);
+        PnlTarjetas.setLayout(new java.awt.CardLayout());
+        PnlTarjetas.add(pnlInicioSesion, "tarjetaInicioSesion");
+        PnlTarjetas.add(pnlHome, "tarjetaHome");
+        PnlTarjetas.add(pnlProyecto, "tarjetaProyecto");
+        PnlTarjetas.add(pnlTarea, "tarjetaTarea");
+        PnlTarjetas.add(pnlTareaSuspendida, "tarjetaTareaSuspendida");
+        PnlTarjetas.add(pnlRazonSuspension, "tarjetaRazonSuspension");
+        PnlTarjetas.add(pnlCrearProyecto, "tarjetaCrearProyecto");
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.LINE_START);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 208, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jPanel3.add(PnlTarjetas, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
@@ -112,11 +121,23 @@ public class FrmGestor extends javax.swing.JFrame {
             }
         });
     }
+    
+    @Override
+    public void cambiarTarjeta(String tarjeta) {
+        ((CardLayout) PnlTarjetas.getLayout()).show(PnlTarjetas, tarjeta);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PnlTarjetas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private gestor.vista.PnlCrearProyecto pnlCrearProyecto;
+    private gestor.vista.PnlHome pnlHome;
+    private gestor.vista.PnlInicioSesion pnlInicioSesion;
+    private gestor.vista.PnlProyecto pnlProyecto;
+    private gestor.vista.PnlRazonSuspension pnlRazonSuspension;
+    private gestor.vista.PnlTarea pnlTarea;
+    private gestor.vista.PnlTareaSuspendida pnlTareaSuspendida;
     // End of variables declaration//GEN-END:variables
 }

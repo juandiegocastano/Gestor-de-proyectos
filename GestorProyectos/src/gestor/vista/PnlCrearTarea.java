@@ -5,6 +5,8 @@
  */
 package gestor.vista;
 
+import gestor.patrones.PrincipalVisitador;
+
 /**
  *
  * @author Usuario
@@ -211,4 +213,9 @@ public class PnlCrearTarea extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+    private PrincipalVisitador visitador;
+    void setVisitador(PrincipalVisitador visitador) {
+        this.visitador = visitador;
+    }
 }

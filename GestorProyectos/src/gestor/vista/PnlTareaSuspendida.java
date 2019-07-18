@@ -5,6 +5,8 @@
  */
 package gestor.vista;
 
+import gestor.patrones.PrincipalVisitador;
+
 /**
  *
  * @author Usuario
@@ -64,4 +66,9 @@ public class PnlTareaSuspendida extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    private PrincipalVisitador visitador;
+    void setVisitador(PrincipalVisitador visitador) {
+        this.visitador = visitador;
+    }
 }

@@ -21,18 +21,18 @@ public class prueba {
 //        i.setSuspensiones(Suspension.BAÑO);
 //        
 //        System.out.println("Integrante 1: " + i.getSuspensiones());
-        Suspension sus = new Suspension();
-        EstadoRegistro est = new EstadoRegistro("estado de registro");
-        
-        Integrante int1;
-        int1 = new Integrante();
-        Integrante int2 = new Integrante();
-        List<Integrante> listaIngrantes = new ArrayList<>();
-        listaIngrantes.add(int1);
-        listaIngrantes.add(int2);
-        
-        ControladorProyecto.getInstance().crearProyecto(listaIngrantes, "Proyecto 1", "esta es una descripcion");
-        
+//        Suspension sus = new Suspension();
+//        EstadoRegistro est = new EstadoRegistro("estado de registro");
+//        
+//        Integrante int1;
+//        int1 = new Integrante();
+//        Integrante int2 = new Integrante();
+//        List<Integrante> listaIngrantes = new ArrayList<>();
+//        listaIngrantes.add(int1);
+//        listaIngrantes.add(int2);
+//        
+//        ControladorProyecto.getInstance().crearProyecto(listaIngrantes, "Proyecto 1", "esta es una descripcion");
+//        
     }
     
 }
