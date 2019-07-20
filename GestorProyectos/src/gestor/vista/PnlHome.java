@@ -5,13 +5,14 @@
  */
 package gestor.vista;
 
+import gestor.patrones.HomeVisitador;
 import gestor.patrones.PrincipalVisitador;
 
 /**
  *
  * @author Usuario
  */
-public class PnlHome extends javax.swing.JPanel {
+public class PnlHome extends javax.swing.JPanel implements HomeVisitador {
 
     /**
      * Creates new form PnlHome
@@ -391,5 +392,15 @@ public class PnlHome extends javax.swing.JPanel {
     private PrincipalVisitador visitador;
     void setVisitador(PrincipalVisitador visitador) {
         this.visitador = visitador;
+    }
+
+    @Override
+    public void cargarTablaProyectos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cargarTablaTareas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

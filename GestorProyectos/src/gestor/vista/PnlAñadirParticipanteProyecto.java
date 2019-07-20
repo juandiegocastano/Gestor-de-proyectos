@@ -5,13 +5,14 @@
  */
 package gestor.vista;
 
+import gestor.patrones.AñadirParticipanteVisitador;
 import gestor.patrones.PrincipalVisitador;
 
 /**
  *
  * @author Usuario
  */
-public class PnlAñadirParticipanteProyecto extends javax.swing.JPanel {
+public class PnlAñadirParticipanteProyecto extends javax.swing.JPanel implements AñadirParticipanteVisitador {
 
     /**
      * Creates new form PnlSeleccionarParticipante
@@ -130,6 +131,11 @@ public class PnlAñadirParticipanteProyecto extends javax.swing.JPanel {
     private PrincipalVisitador visitador;
     void setVisitador(PrincipalVisitador visitador) {
         this.visitador = visitador;
+    }
+
+    @Override
+    public void cargarTablaParticipante() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

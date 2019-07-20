@@ -6,12 +6,13 @@
 package gestor.vista;
 
 import gestor.patrones.PrincipalVisitador;
+import gestor.patrones.RazonSuspensionVisitador;
 
 /**
  *
  * @author Usuario
  */
-public class PnlRazonSuspensionTarea extends javax.swing.JPanel {
+public class PnlRazonSuspensionTarea extends javax.swing.JPanel implements RazonSuspensionVisitador{
 
     /**
      * Creates new form PnlRazonSuspension
@@ -119,5 +120,10 @@ public class PnlRazonSuspensionTarea extends javax.swing.JPanel {
     private PrincipalVisitador visitador;
     void setVisitador(PrincipalVisitador visitador) {
         this.visitador = visitador;
+    }
+
+    @Override
+    public void darRazonSuspension() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

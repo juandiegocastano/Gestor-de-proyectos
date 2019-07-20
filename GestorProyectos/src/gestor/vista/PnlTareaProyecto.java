@@ -6,12 +6,13 @@
 package gestor.vista;
 
 import gestor.patrones.PrincipalVisitador;
+import gestor.patrones.TareaVisitador;
 
 /**
  *
  * @author Usuario
  */
-public class PnlTareaProyecto extends javax.swing.JPanel {
+public class PnlTareaProyecto extends javax.swing.JPanel implements TareaVisitador {
 
     /**
      * Creates new form PnlTarea
@@ -279,5 +280,15 @@ public class PnlTareaProyecto extends javax.swing.JPanel {
     private PrincipalVisitador visitador;
     void setVisitador(PrincipalVisitador visitador) {
         this.visitador = visitador;
+    }
+
+    @Override
+    public void cargarTablaIntegrantes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cargarTablaTareas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
