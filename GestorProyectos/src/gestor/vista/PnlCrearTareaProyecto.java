@@ -11,12 +11,12 @@ import gestor.patrones.PrincipalVisitador;
  *
  * @author Usuario
  */
-public class PnlCrearTarea extends javax.swing.JPanel {
+public class PnlCrearTareaProyecto extends javax.swing.JPanel {
 
     /**
      * Creates new form PnlCrearTarea
      */
-    public PnlCrearTarea() {
+    public PnlCrearTareaProyecto() {
         initComponents();
     }
 
@@ -97,6 +97,11 @@ public class PnlCrearTarea extends javax.swing.JPanel {
         jButton2.setText("Eliminar");
 
         jButton3.setText("Añadir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -155,6 +160,11 @@ public class PnlCrearTarea extends javax.swing.JPanel {
         );
 
         jButton1.setText("Crear");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -195,6 +205,14 @@ public class PnlCrearTarea extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        visitador.cambiarTarjeta("tarjetaAñadirParticipanteCrearTarea");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        visitador.cambiarTarjeta("tarjetaProyecto");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -206,7 +224,6 @@ public class PnlCrearTarea extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

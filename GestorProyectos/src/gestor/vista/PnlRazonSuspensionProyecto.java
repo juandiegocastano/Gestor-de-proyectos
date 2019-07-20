@@ -11,12 +11,12 @@ import gestor.patrones.PrincipalVisitador;
  *
  * @author Usuario
  */
-public class PnlRazonSuspension extends javax.swing.JPanel {
+public class PnlRazonSuspensionProyecto extends javax.swing.JPanel {
 
     /**
      * Creates new form PnlRazonSuspension
      */
-    public PnlRazonSuspension() {
+    public PnlRazonSuspensionProyecto() {
         initComponents();
     }
 
@@ -104,7 +104,7 @@ public class PnlRazonSuspension extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       visitador.cambiarTarjeta("tarjetaTarea");
+       visitador.cambiarTarjeta("tarjetaProyecto");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

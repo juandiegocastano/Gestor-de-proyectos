@@ -107,17 +107,66 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="gestor.vista.PnlRazonSuspension" name="pnlRazonSuspension">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="tarjetaRazonSuspension"/>
-                </Constraint>
-              </Constraints>
-            </Component>
             <Component class="gestor.vista.PnlCrearProyecto" name="pnlCrearProyecto">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="tarjetaCrearProyecto"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="gestor.vista.PnlA&#xf1;adirParticipanteProyecto" name="pnlA&#xf1;adirParticipanteProyecto">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="tarjetaA&#xf1;adirParticipanteProyecto"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="gestor.vista.PnlA&#xf1;adirParticipanteTarea" name="pnlA&#xf1;adirParticipanteTarea">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="tarjetaA&#xf1;adirParticipanteTarea"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="gestor.vista.PnlTareaProyecto" name="pnlTareaProyecto">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="tarjetaTareaProyecto"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="gestor.vista.PnlCrearTareaProyecto" name="pnlCrearTareaProyecto">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="tarjetaCrearTareaProyecto"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="gestor.vista.PnlRazonSuspensionProyecto" name="pnlRazonSuspensionProyecto">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="tarjetaRazonSuspensionProyecto"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="gestor.vista.PnlRazonSuspensionTarea" name="pnlRazonSuspensionTarea">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="tarjetaRazonSuspensionTarea"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="gestor.vista.PnlA&#xf1;adirParticipanteCrearTarea" name="pnlA&#xf1;adirParticipanteCrearTarea">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="tarjetaA&#xf1;adirParticipanteCrearTarea"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="gestor.vista.PnlA&#xf1;adirParticipanteTareaProyecto" name="pnlA&#xf1;adirParticipanteTareaProyecto">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="tarjetaA&#xf1;adirParticipanteTareaProyecto"/>
                 </Constraint>
               </Constraints>
             </Component>

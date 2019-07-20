@@ -25,8 +25,15 @@ public class FrmGestor extends javax.swing.JFrame implements PrincipalVisitador 
        pnlProyecto.setVisitador(this);
        pnlTarea.setVisitador(this);
        pnlTareaSuspendida.setVisitador(this);
-       pnlRazonSuspension.setVisitador(this);
+       pnlRazonSuspensionProyecto.setVisitador(this);
+       pnlRazonSuspensionTarea.setVisitador(this);
        pnlCrearProyecto.setVisitador(this);
+       pnlAñadirParticipanteProyecto.setVisitador(this);
+       pnlAñadirParticipanteTarea.setVisitador(this);
+       pnlTareaProyecto.setVisitador(this);
+       pnlCrearTareaProyecto.setVisitador(this);
+       pnlAñadirParticipanteCrearTarea.setVisitador(this);
+       pnlAñadirParticipanteTareaProyecto.setVisitador(this);
         
     }
 
@@ -48,8 +55,15 @@ public class FrmGestor extends javax.swing.JFrame implements PrincipalVisitador 
         pnlProyecto = new gestor.vista.PnlProyecto();
         pnlTarea = new gestor.vista.PnlTarea();
         pnlTareaSuspendida = new gestor.vista.PnlTareaSuspendida();
-        pnlRazonSuspension = new gestor.vista.PnlRazonSuspension();
         pnlCrearProyecto = new gestor.vista.PnlCrearProyecto();
+        pnlAñadirParticipanteProyecto = new gestor.vista.PnlAñadirParticipanteProyecto();
+        pnlAñadirParticipanteTarea = new gestor.vista.PnlAñadirParticipanteTarea();
+        pnlTareaProyecto = new gestor.vista.PnlTareaProyecto();
+        pnlCrearTareaProyecto = new gestor.vista.PnlCrearTareaProyecto();
+        pnlRazonSuspensionProyecto = new gestor.vista.PnlRazonSuspensionProyecto();
+        pnlRazonSuspensionTarea = new gestor.vista.PnlRazonSuspensionTarea();
+        pnlAñadirParticipanteCrearTarea = new gestor.vista.PnlAñadirParticipanteCrearTarea();
+        pnlAñadirParticipanteTareaProyecto = new gestor.vista.PnlAñadirParticipanteTareaProyecto();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -77,8 +91,15 @@ public class FrmGestor extends javax.swing.JFrame implements PrincipalVisitador 
         PnlTarjetas.add(pnlProyecto, "tarjetaProyecto");
         PnlTarjetas.add(pnlTarea, "tarjetaTarea");
         PnlTarjetas.add(pnlTareaSuspendida, "tarjetaTareaSuspendida");
-        PnlTarjetas.add(pnlRazonSuspension, "tarjetaRazonSuspension");
         PnlTarjetas.add(pnlCrearProyecto, "tarjetaCrearProyecto");
+        PnlTarjetas.add(pnlAñadirParticipanteProyecto, "tarjetaAñadirParticipanteProyecto");
+        PnlTarjetas.add(pnlAñadirParticipanteTarea, "tarjetaAñadirParticipanteTarea");
+        PnlTarjetas.add(pnlTareaProyecto, "tarjetaTareaProyecto");
+        PnlTarjetas.add(pnlCrearTareaProyecto, "tarjetaCrearTareaProyecto");
+        PnlTarjetas.add(pnlRazonSuspensionProyecto, "tarjetaRazonSuspensionProyecto");
+        PnlTarjetas.add(pnlRazonSuspensionTarea, "tarjetaRazonSuspensionTarea");
+        PnlTarjetas.add(pnlAñadirParticipanteCrearTarea, "tarjetaAñadirParticipanteCrearTarea");
+        PnlTarjetas.add(pnlAñadirParticipanteTareaProyecto, "tarjetaAñadirParticipanteTareaProyecto");
 
         jPanel3.add(PnlTarjetas, java.awt.BorderLayout.CENTER);
 
@@ -132,12 +153,19 @@ public class FrmGestor extends javax.swing.JFrame implements PrincipalVisitador 
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private gestor.vista.PnlAñadirParticipanteCrearTarea pnlAñadirParticipanteCrearTarea;
+    private gestor.vista.PnlAñadirParticipanteProyecto pnlAñadirParticipanteProyecto;
+    private gestor.vista.PnlAñadirParticipanteTarea pnlAñadirParticipanteTarea;
+    private gestor.vista.PnlAñadirParticipanteTareaProyecto pnlAñadirParticipanteTareaProyecto;
     private gestor.vista.PnlCrearProyecto pnlCrearProyecto;
+    private gestor.vista.PnlCrearTareaProyecto pnlCrearTareaProyecto;
     private gestor.vista.PnlHome pnlHome;
     private gestor.vista.PnlInicioSesion pnlInicioSesion;
     private gestor.vista.PnlProyecto pnlProyecto;
-    private gestor.vista.PnlRazonSuspension pnlRazonSuspension;
+    private gestor.vista.PnlRazonSuspensionProyecto pnlRazonSuspensionProyecto;
+    private gestor.vista.PnlRazonSuspensionTarea pnlRazonSuspensionTarea;
     private gestor.vista.PnlTarea pnlTarea;
+    private gestor.vista.PnlTareaProyecto pnlTareaProyecto;
     private gestor.vista.PnlTareaSuspendida pnlTareaSuspendida;
     // End of variables declaration//GEN-END:variables
 }

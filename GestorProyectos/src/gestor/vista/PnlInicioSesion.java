@@ -33,6 +33,7 @@ public class PnlInicioSesion extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txt_usuario = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setLayout(new java.awt.GridBagLayout());
 
@@ -41,16 +42,16 @@ public class PnlInicioSesion extends javax.swing.JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(25, 75, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(121, 63, 0, 0);
         add(jLabel1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 132;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 29, 0, 49);
+        gridBagConstraints.insets = new java.awt.Insets(118, 29, 0, 108);
         add(txt_usuario, gridBagConstraints);
 
         jButton1.setText("Ingresar");
@@ -60,11 +61,21 @@ public class PnlInicioSesion extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(41, 98, 97, 0);
+        add(jButton1, gridBagConstraints);
+
+        jButton2.setText("Crear");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(41, 5, 0, 0);
-        add(jButton1, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(42, 75, 97, 108);
+        add(jButton2, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -77,6 +88,7 @@ public class PnlInicioSesion extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
