@@ -17,6 +17,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.joda.time.DateTime;
 
 /**
  *
@@ -31,9 +32,9 @@ public class Tarea implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(name = "tiempo", nullable = false)
+    @Column(name = "fechaInicio", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date tiempo;
+    private DateTime fechaInicio;
     
     @OneToMany
     private List<EstadoRegistro> estados;
@@ -45,18 +46,23 @@ public class Tarea implements Serializable {
     
     public Tarea() {
     }
+    public Tarea(DateTime fechaInicio, List<EstadoRegistro> estados, Proyecto proyecto) {
+        this.proyecto = proyecto;
+        this.fechaInicio = fechaInicio;
+        this.estados = estados;
+    }
 
-    public Tarea(Date tiempo, List<EstadoRegistro> estados) {
-        this.tiempo = tiempo;
+    public Tarea(DateTime tiempo, List<EstadoRegistro> estados) {
+        this.fechaInicio = tiempo;
         this.estados = estados;
     }
     
-    public Date getTiempo() {
-        return tiempo;
+    public DateTime getFechaInicio() {
+        return fechaInicio;
     }
 
-    public void setTiempo(Date tiempo) {
-        this.tiempo = tiempo;
+    public void setFechaInicio(DateTime tiempo) {
+        this.fechaInicio = tiempo;
     }
 
     public List<EstadoRegistro> getEstado() {

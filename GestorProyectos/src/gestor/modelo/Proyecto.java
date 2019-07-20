@@ -52,6 +52,7 @@ public class Proyecto implements Serializable {
     }
 
     public Proyecto(List<Integrante> listaIntegrantes, String nombreProyecto, String descripcionProyecto) {
+        this.listaTareas = null;
         this.listaIntegrantes = listaIntegrantes;
         this.nombreProyecto = nombreProyecto;
         this.descripcionProyecto = descripcionProyecto;

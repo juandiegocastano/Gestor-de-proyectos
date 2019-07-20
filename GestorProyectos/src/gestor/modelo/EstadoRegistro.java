@@ -6,7 +6,6 @@
 package gestor.modelo;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
 
 /**
  *
@@ -33,13 +34,28 @@ public class EstadoRegistro implements Serializable{
     
     @Column(name = "duracion", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date duracion;
+    private Duration duracion;
+    
+    @Column(name = "fechaInicio", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private DateTime fechaInicio;
+    
+    @Column(name = "estadoActual", nullable = false)
+    private String estadoActual;
     
     @ManyToOne
     private Tarea tareaRealizada;
     
     @ManyToOne
     private Integrante integrante;
+
+    //Constructor para un nuevo estadoRegistro
+    public EstadoRegistro(Tarea tareaRealizada, Integrante integrante) {
+        this.duracion = Duration.ZERO;
+        this.fechaInicio = DateTime.now();
+        this.tareaRealizada = tareaRealizada;
+        this.integrante = integrante;
+    }
 
     /*    CONSTRUCTORES--------------------------------------------->*/
     public EstadoRegistro() {
@@ -74,6 +90,14 @@ public class EstadoRegistro implements Serializable{
         return this.descripcion;
     }
     
+    public DateTime getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(DateTime fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+    
         public Long getId() {
         return id;
     }
@@ -82,12 +106,20 @@ public class EstadoRegistro implements Serializable{
         this.id = id;
     }
 
-    public Date getDuracion() {
+    public Duration getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(Date duracion) {
+    public void setDuracion(Duration duracion) {
         this.duracion = duracion;
+    }
+    
+    public String getEstadoActual() {
+        return estadoActual;
+    }
+
+    public void setEstadoActual(String estadoActual) {
+        this.estadoActual = estadoActual;
     }
     
 }

@@ -40,10 +40,16 @@ public class Integrante implements Serializable {
     
     public Integrante(){};
     
-    public Integrante(String nombreIntegrante, List<Suspension> suspensiones, List<EstadoRegistro> estadoRegistro) {
+    public Integrante(String nombreIntegrante, List<EstadoRegistro> estadoRegistro) {
         this.nombreIntegrante = nombreIntegrante;
-        this.suspensiones = suspensiones;
+        this.suspensiones = null;
         this.estadoRegistro = estadoRegistro;
+    }
+    
+    public Integrante(String nombreIntegrante) {
+        this.nombreIntegrante = nombreIntegrante;
+        this.suspensiones = null;
+        this.estadoRegistro = null;
     }
 
 
