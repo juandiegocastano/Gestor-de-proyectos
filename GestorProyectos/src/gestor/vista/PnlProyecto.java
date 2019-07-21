@@ -5,8 +5,14 @@
  */
 package gestor.vista;
 
+import gestor.controlador.ControladorProyecto;
+import gestor.modelo.Integrante;
+import gestor.modelo.Proyecto;
+import gestor.modelo.Tarea;
 import gestor.patrones.PrincipalVisitador;
 import gestor.patrones.ProyectoVisitador;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,7 +41,7 @@ public class PnlProyecto extends javax.swing.JPanel implements ProyectoVisitador
         jButton5 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblIntegrantes = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -44,7 +50,7 @@ public class PnlProyecto extends javax.swing.JPanel implements ProyectoVisitador
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblTareas = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         btnNuevaTarea = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
@@ -88,7 +94,7 @@ public class PnlProyecto extends javax.swing.JPanel implements ProyectoVisitador
 
         jButton5.getAccessibleContext().setAccessibleDescription("");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblIntegrantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -100,7 +106,7 @@ public class PnlProyecto extends javax.swing.JPanel implements ProyectoVisitador
                 "Integrantes"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblIntegrantes);
 
         jButton3.setText("Añadir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +172,7 @@ public class PnlProyecto extends javax.swing.JPanel implements ProyectoVisitador
             .addGap(0, 23, Short.MAX_VALUE)
         );
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblTareas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -177,7 +183,7 @@ public class PnlProyecto extends javax.swing.JPanel implements ProyectoVisitador
                 "Nombre", "Estado", "Duración"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(tblTareas);
 
         jButton2.setText("Ver tarea");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -339,9 +345,9 @@ public class PnlProyecto extends javax.swing.JPanel implements ProyectoVisitador
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblIntegrantes;
+    private javax.swing.JTable tblTareas;
     // End of variables declaration//GEN-END:variables
 
     private PrincipalVisitador visitador;
@@ -351,11 +357,39 @@ public class PnlProyecto extends javax.swing.JPanel implements ProyectoVisitador
 
     @Override
     public void cargarTablaTareas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Tarea> tareas = ControladorProyecto.getInstance().listarTareasPorIntegrante(null);
+
+        // Borro los datos existentes de la tabla
+        while (tblTareas.getRowCount() > 0) {
+            ((DefaultTableModel) tblTareas.getModel()).removeRow(0);
+        }
+
+        // Agrego los datos que fueron consultados
+        for (Tarea tarea : tareas) {
+            ((DefaultTableModel) tblTareas.getModel()).addRow(new Object[]{
+                tarea.getId(),
+                tarea.getNombre(),
+                tarea.getFechaInicio()
+            });
+        }
     }
 
     @Override
-    public void cargarTablaIntegrantes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void cargarTablaIntegrantes() {{
+        List<Integrante> integrantes = ControladorProyecto.getInstance().listarIntegrantesPorProyecto(null);
+
+        // Borro los datos existentes de la tabla
+        while (tblIntegrantes.getRowCount() > 0) {
+            ((DefaultTableModel) tblIntegrantes.getModel()).removeRow(0);
+        }
+
+        // Agrego los datos que fueron consultados
+        for (Integrante integrante : integrantes) {
+            ((DefaultTableModel) tblIntegrantes.getModel()).addRow(new Object[]{
+                integrante.getId(),
+                integrante.getNombreIntegrante()
+            });
+        }
     }
+}
 }

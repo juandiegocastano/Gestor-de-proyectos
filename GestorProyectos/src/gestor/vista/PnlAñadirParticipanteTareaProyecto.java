@@ -5,8 +5,12 @@
  */
 package gestor.vista;
 
+import gestor.controlador.ControladorProyecto;
+import gestor.modelo.Integrante;
 import gestor.patrones.AñadirParticipanteVisitador;
 import gestor.patrones.PrincipalVisitador;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,7 +38,7 @@ public class PnlAñadirParticipanteTareaProyecto extends javax.swing.JPanel impl
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblIntegrantes = new javax.swing.JTable();
 
         jButton1.setText("Añadir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +63,7 @@ public class PnlAñadirParticipanteTareaProyecto extends javax.swing.JPanel impl
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblIntegrantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -80,7 +84,7 @@ public class PnlAñadirParticipanteTareaProyecto extends javax.swing.JPanel impl
                 "Selecciona un nuevo participante"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblIntegrantes);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,7 +130,7 @@ public class PnlAñadirParticipanteTareaProyecto extends javax.swing.JPanel impl
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblIntegrantes;
     // End of variables declaration//GEN-END:variables
     private PrincipalVisitador visitador;
     void setVisitador(PrincipalVisitador visitador) {
@@ -134,8 +138,21 @@ public class PnlAñadirParticipanteTareaProyecto extends javax.swing.JPanel impl
     }
 
     @Override
-    public void cargarTablaParticipante() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void cargarTablaParticipante() {{
+        List<Integrante> integrantes = ControladorProyecto.getInstance().listarIntegrantesPorAgregarATarea(null,null);
+
+        // Borro los datos existentes de la tabla
+        while (tblIntegrantes.getRowCount() > 0) {
+            ((DefaultTableModel) tblIntegrantes.getModel()).removeRow(0);
+        }
+
+        // Agrego los datos que fueron consultados
+        for (Integrante integrante : integrantes) {
+            ((DefaultTableModel) tblIntegrantes.getModel()).addRow(new Object[]{
+                integrante.getId(),
+                integrante.getNombreIntegrante()
+            });
+        }
+    }}
 
 }

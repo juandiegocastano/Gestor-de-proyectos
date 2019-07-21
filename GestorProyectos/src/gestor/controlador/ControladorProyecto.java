@@ -68,6 +68,19 @@ public class ControladorProyecto {
         return resp;
     }
     
+    public List<Proyecto> listarProyectosDeIntegrante(Integrante integrante) {
+        List<Proyecto> resp = null;
+
+        EntityManager em = getEntityManager();
+        String consulta = "SELECT P FROM Proyecto WHERE id = " + integrante.getId();
+        Query q = em.createQuery(consulta);
+        resp = (List<Proyecto>) q.getResultList();
+
+        em.close();
+
+        return resp;
+    }
+    
     public void eliminarProyecto(Long id){
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
@@ -114,6 +127,19 @@ public class ControladorProyecto {
 
         EntityManager em = getEntityManager();
         Query q = em.createQuery("SELECT p FROM Tarea p");
+        resp = (List<Tarea>) q.getResultList();
+
+        em.close();
+
+        return resp;
+    }
+    
+    public List<Tarea> listarTareasPorIntegrante(Integrante integrante) {
+        List<Tarea> resp = null;
+
+        EntityManager em = getEntityManager();
+        String consulta = "SELECT P FROM Tarea WHERE id = " + integrante.getId().toString(); //Sin terminar
+        Query q = em.createQuery(consulta);
         resp = (List<Tarea>) q.getResultList();
 
         em.close();
@@ -286,6 +312,51 @@ public class ControladorProyecto {
         return resp;
     }
     
+    public List<Integrante> listarIntegrantesPorProyecto(Proyecto proyecto) {
+        List<Integrante> resp = null;
+
+        EntityManager em = getEntityManager();
+        String consulta = "SELECT P FROM Integrante p WHERE id = " + proyecto.getId(); //Sin terminar
+        Query q = em.createQuery(consulta);
+        resp = (List<Integrante>) q.getResultList();
+
+        em.close();
+
+        return resp;
+    }
+    
+    public List<Integrante> listarIntegrantesPorAgregarATareaCrearTarea(Proyecto proyecto, Integrante integranteQueAgrega, Tarea tarea) {
+        List<Integrante> resp = null;
+
+        EntityManager em = getEntityManager();
+        Query q = em.createQuery("SELECT p FROM Integrante p");
+        resp = (List<Integrante>) q.getResultList();
+
+        em.close();
+
+        return resp;
+    }
+    
+    public List<Integrante> listarIntegrantesPorAgregarATarea(Integrante integranteAgregando, Tarea tarea) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public List<Integrante> listarIntegrantesPorAgregarAProyecto(Proyecto proyecto, Integrante integranteAgregando) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public List<Integrante> listarIntegrantesPorTarea(Tarea tarea) {
+        List<Integrante> resp = null;
+
+        EntityManager em = getEntityManager();
+        Query q = em.createQuery("SELECT p FROM Integrante p");
+        resp = (List<Integrante>) q.getResultList();
+
+        em.close();
+
+        return resp;
+    }
+    
     public void eliminarIntegrante(Long id){
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
@@ -309,4 +380,9 @@ public class ControladorProyecto {
 
         return resp;
     }
+
+    public List<Integrante> listarIntegrantesPorAgregar(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

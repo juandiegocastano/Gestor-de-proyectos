@@ -11,5 +11,4 @@ package gestor.patrones;
  */
 public interface TareaVisitador {
     void cargarTablaIntegrantes();
-    void cargarTablaTareas();
 }

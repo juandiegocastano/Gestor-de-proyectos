@@ -6,7 +6,6 @@
 package gestor.modelo;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,6 +34,9 @@ public class Tarea implements Serializable {
     @Column(name = "fechaInicio", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private DateTime fechaInicio;
+    
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
     
     @OneToMany
     private List<EstadoRegistro> estados;
@@ -87,6 +89,23 @@ public class Tarea implements Serializable {
 
     public void setEstados(List<EstadoRegistro> estados) {
         this.estados = estados;
+    }
+    
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Proyecto getProyecto() {
+        return proyecto;
+    }
+
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
     }
     
 

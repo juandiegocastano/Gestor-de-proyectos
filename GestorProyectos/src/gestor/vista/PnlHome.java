@@ -5,8 +5,13 @@
  */
 package gestor.vista;
 
+import gestor.controlador.ControladorProyecto;
+import gestor.modelo.Proyecto;
+import gestor.modelo.Tarea;
 import gestor.patrones.HomeVisitador;
 import gestor.patrones.PrincipalVisitador;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -40,12 +45,12 @@ public class PnlHome extends javax.swing.JPanel implements HomeVisitador {
         jPanel6 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblProyectos = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblTareas = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
@@ -129,7 +134,7 @@ public class PnlHome extends javax.swing.JPanel implements HomeVisitador {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblProyectos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -150,9 +155,9 @@ public class PnlHome extends javax.swing.JPanel implements HomeVisitador {
                 return types [columnIndex];
             }
         });
-        jTable1.setCellSelectionEnabled(true);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        tblProyectos.setCellSelectionEnabled(true);
+        jScrollPane1.setViewportView(tblProyectos);
+        tblProyectos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -199,7 +204,7 @@ public class PnlHome extends javax.swing.JPanel implements HomeVisitador {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblTareas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -226,7 +231,7 @@ public class PnlHome extends javax.swing.JPanel implements HomeVisitador {
                 "Nombre", "Proyecto", "Estado"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblTareas);
 
         jButton4.setText("Ver tarea");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -383,9 +388,9 @@ public class PnlHome extends javax.swing.JPanel implements HomeVisitador {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblProyectos;
+    private javax.swing.JTable tblTareas;
     // End of variables declaration//GEN-END:variables
     
     
@@ -396,11 +401,39 @@ public class PnlHome extends javax.swing.JPanel implements HomeVisitador {
 
     @Override
     public void cargarTablaProyectos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Proyecto> proyectos = ControladorProyecto.getInstance().listarProyectosDeIntegrante(null);
+
+        // Borro los datos existentes de la tabla
+        while (tblProyectos.getRowCount() > 0) {
+            ((DefaultTableModel) tblProyectos.getModel()).removeRow(0);
+        }
+
+        // Agrego los datos que fueron consultados
+        for (Proyecto proyecto : proyectos) {
+            ((DefaultTableModel) tblProyectos.getModel()).addRow(new Object[]{
+                proyecto.getId(),
+                proyecto.getNombreProyecto()
+            });
+        }
     }
 
     @Override
     public void cargarTablaTareas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Tarea> tareas = ControladorProyecto.getInstance().listarTareasPorIntegrante(null);
+
+        // Borro los datos existentes de la tabla
+        while (tblTareas.getRowCount() > 0) {
+            ((DefaultTableModel) tblTareas.getModel()).removeRow(0);
+        }
+
+        // Agrego los datos que fueron consultados
+        for (Tarea tarea : tareas) {
+            ((DefaultTableModel) tblTareas.getModel()).addRow(new Object[]{
+                tarea.getId(),
+                tarea.getNombre(),
+                tarea.getProyecto(),
+                tarea.getFechaInicio()
+            });
+        }
     }
 }

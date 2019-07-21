@@ -5,8 +5,12 @@
  */
 package gestor.vista;
 
+import gestor.controlador.ControladorProyecto;
+import gestor.modelo.Integrante;
 import gestor.patrones.PrincipalVisitador;
 import gestor.patrones.TareaVisitador;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,7 +36,7 @@ public class PnlTarea extends javax.swing.JPanel implements TareaVisitador {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblIntegrantes = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -48,7 +52,7 @@ public class PnlTarea extends javax.swing.JPanel implements TareaVisitador {
         jLabel4 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblIntegrantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -60,7 +64,7 @@ public class PnlTarea extends javax.swing.JPanel implements TareaVisitador {
                 "Integrantes"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblIntegrantes);
 
         jButton3.setText("Añadir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -273,8 +277,8 @@ public class PnlTarea extends javax.swing.JPanel implements TareaVisitador {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblIntegrantes;
     // End of variables declaration//GEN-END:variables
 
     private PrincipalVisitador visitador;
@@ -283,12 +287,21 @@ public class PnlTarea extends javax.swing.JPanel implements TareaVisitador {
     }
 
     @Override
-    public void cargarTablaIntegrantes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void cargarTablaIntegrantes() {{
+        List<Integrante> integrantes = ControladorProyecto.getInstance().listarIntegrantesPorTarea(null);
 
-    @Override
-    public void cargarTablaTareas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        // Borro los datos existentes de la tabla
+        while (tblIntegrantes.getRowCount() > 0) {
+            ((DefaultTableModel) tblIntegrantes.getModel()).removeRow(0);
+        }
+
+        // Agrego los datos que fueron consultados
+        for (Integrante integrante : integrantes) {
+            ((DefaultTableModel) tblIntegrantes.getModel()).addRow(new Object[]{
+                integrante.getId(),
+                integrante.getNombreIntegrante()
+            });
+        }
+    }}
+
 }
